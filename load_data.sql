@@ -149,3 +149,11 @@ VALUES (seq_SzczegolyTransakcjiID.NEXTVAL, 1, 1, 30, 157.5, 7);
 
 INSERT INTO SzczegolyTransakcji (SzczegolyTransakcjiID, TransakcjaID, PaliwoID, IloscPaliwa, Kwota, ObslugujacyID)
 VALUES (seq_SzczegolyTransakcjiID.NEXTVAL, 2, 2,  40, 200, 8);
+
+
+INSERT INTO PremiePracownikow (PracownikID, TransakcjaID, Punkty)
+VALUES (7, 1, 150);
+
+INSERT INTO PremiePracownikow (PracownikID, TransakcjaID, Punkty)
+VALUES (8, 2, 200);
+COMMIT;
