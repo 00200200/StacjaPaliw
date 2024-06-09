@@ -107,7 +107,7 @@ END;
 /
 
 BEGIN
-    przyjmij_towar(1);
+    przyjmij_towar(1); -- Może być error jak nie ma kierownika zmiany
 END;
 /
 -- Rozliczanie sie z dostawcami
@@ -351,9 +351,14 @@ CREATE OR REPLACE PROCEDURE wystaw_fakture(
     p_nip IN VARCHAR2
 )
 IS
+    v_kwota NUMBER(10,2);
 BEGIN
-    INSERT INTO Faktury (FakturaID, KlientID, TransakcjaID, NIP)
-    VALUES (seq_FakturaID.NEXTVAL, p_klientID, p_transakcjaID, p_nip);
+    SELECT SUM(kwota) INTO v_kwota
+    FROM SzczegolyTransakcji
+    WHERE TransakcjaID = p_transakcjaID;
+    
+    INSERT INTO Faktury (FakturaID, KlientID, TransakcjaID, NIP,Kwota)
+    VALUES (seq_FakturaID.NEXTVAL, p_klientID, p_transakcjaID, p_nip,v_kwota);
 
     DBMS_OUTPUT.PUT_LINE('Faktura wystawiona dla KlientID = ' || p_klientID || ', TransakcjaID = ' || p_transakcjaID);
     COMMIT;

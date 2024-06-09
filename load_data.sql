@@ -156,4 +156,3 @@ VALUES (7, 1, 150);
 
 INSERT INTO PremiePracownikow (PracownikID, TransakcjaID, Punkty)
 VALUES (8, 2, 200);
-COMMIT;

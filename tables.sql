@@ -89,6 +89,7 @@ CREATE TABLE Faktury (
     KlientID NUMBER NULL,
     TransakcjaID NUMBER NOT NULL,
     NIP VARCHAR2(10),
+    Kwota NUMBER(10,2),
     FOREIGN KEY (KlientID) REFERENCES Klienci(KlientID),
     FOREIGN KEY (TransakcjaID) REFERENCES Transakcje(TransakcjaID)
 );
