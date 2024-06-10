@@ -6,7 +6,7 @@ VALUES (seq_DostawcaID.NEXTVAL, 'Dostawca A', '123456789', 'kontakt@dostawcaA.pl
 INSERT INTO Dostawcy (DostawcaID, Nazwa, Telefon, Email, Ulica, Miasto, KodPocztowy, Kraj)
 VALUES (seq_DostawcaID.NEXTVAL, 'Dostawca B', '987654321', 'kontakt@dostawcaB.pl', 'Ulica B', 'Miasto B', '11-111', 'Polska');
 
--- Paliwa
+-- Paliwa4
 INSERT INTO Paliwa (PaliwoID, RodzajPaliwa, CenaZaLitr, DostawcaID, AktualnyStan)
 VALUES (seq_PaliwoID.NEXTVAL, 'Benzyna', 5.25, 1, 10000);
 
